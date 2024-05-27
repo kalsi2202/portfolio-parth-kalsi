@@ -1,0 +1,137 @@
+*{
+    margin: o;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.item {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.glow-text span{
+  transition: 0.5s;
+}
+.glow-text:hover span:nth-child(1):after{
+  content: "";
+}
+.glow-text:hover span:nth-child(1){
+  margin-left: 10px;
+}
+.glow-text:hover span:nth-child(2){
+  margin-left: 40px;
+}
+.glow-text:hover span{
+  color: #fff;
+  text-shadow: 0 0 10px #4299e1, 
+               0 0 20px #4299e1, 
+               0 0 40px #4299e1, 
+               0 0 80px #4299e1, 
+               0 0 120px #4299e1, 
+               0 0 160px #4299e1; 
+}
+
+
+.hey span{
+  display: table-cell;
+  animation: anime 1.25s linear infinite;
+}
+.hey span:nth-child(1){
+  animation-delay: 0s; 
+}
+.hey span:nth-child(2){
+  animation-delay: 0.25s; 
+}
+.hey span:nth-child(3){
+  animation-delay: 0.5s; 
+}
+.hey span:nth-child(4){
+  animation-delay: 0.75s; 
+}
+@keyframes anime{
+  0%,100%{
+    color: #fff;
+    filter: blur(2px);
+    text-shadow: 0 0 10px #1a365d,
+                0 0 20px #1a365d,
+                0 0 40px #1a365d,
+                0 0 80px #1a365d,
+                0 0 120px #1a365d,
+                0 0 200px #1a365d,
+                0 0 300px #1a365d,
+                0 0 400px #1a365d;
+  }
+  5%,95%{
+    color: rgb(71, 85, 105);
+    filter: blur(0px);
+    text-shadow: none;
+  }
+}
+
+.wrapper{
+  display: flex;
+}
+.wrapper .dynamic-txts{
+  margin-left: 10px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li{
+  list-style: none;
+  color: #1a365d;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100%{
+    top: -360px;
+  }
+}
+
+.dynamic-txts li span{
+  position: relative;
+  margin: 10px 0;
+  line-height: 90px;
+}
+.dynamic-txts li span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  margin: 20px 0;
+  height: 80%;
+  width: 100%;
+  background: rgb(241,245,249);
+  border-left: 2px solid #1a365d;
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
+  }
+}
+@media (min-width: 768px) {
+  .wrapper .dynamic-txts{
+    height: 90px;
+  }
+  .dynamic-txts li span{
+    margin: 5px 0px;
+  }
+  .dynamic-txts li span::after{
+    height: 100%;
+    margin: 0;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Expletus+Sans&display=swap');
+.head{
+  font-family: 'Expletus Sans', cursive;
+}
+.tail{
+  font-family: 'Baloo Bhai 2', cursive;
+}
